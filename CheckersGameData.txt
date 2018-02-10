@@ -1,0 +1,38 @@
+class CheckerPiece{
+	Color pieceColor;
+	boolean isKing;
+	
+	CheckerPiece(Color){//constructor, sets color and sets isKing to false
+		
+	}
+	
+	void kingMe; //sets isKing to true when it reaches the other side
+	boolean getIsKing; //used when determining valid moves
+	Color getColor; //gets color of piece, used when determining valid moves
+	
+}
+
+class Player{
+	String name;
+	Color gameColor; //color of checker pieces, used to determine play order
+	int numberOfPieces; //number of pieces remaining in game, game ends once it reaches 0;
+	
+	Player(Color){ //constructor, sets color and sets numberOfPieces to 12;
+	}
+	
+	String getName();//gets name to display
+	int getNumberOfPieces(); //ends game if it returns 0
+	void decreaseNumberOfPieces(); //decreases a players pieces by one when jumped
+	Color getColor(); //used when determining valid moves
+}
+
+class CheckerGame{
+	Player lightPlayer;
+	Player darkPlayer;
+	CheckerPiece board[][]; //2D array of CheckerPieces
+	
+	buildBoard();//sets initial conditions in 2D array, 12 pieces for both sides, on the first three rows of both sides
+	CheckerPiece getPiece(int x, int y); //gets piece at position in 2D array, used when moving piece
+	void setPiece(int x, int y); //sets piece at position in 2D array, used when placing moved piece
+	void removePiece(int x, int y); //removes piece at position in 2D array when jumped or moved to a new space
+}
